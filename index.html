@@ -3,97 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yutong Zha - Personal Website</title>
+    <title>Yutong Zha - Personal Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Yutong Zha</h1>
-        <p>Vancouver, British Columbia | Montreal, Quebec</p>
-        <p>
-            <a href="https://www.linkedin.com/in/yutong-zha-129b29340/" target="_blank">LinkedIn</a> | 
-            <a href="https://github.com/Samecho" target="_blank">GitHub</a>
-        </p>
 
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="nav-brand">Yutong Zha</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero" id="about">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Yutong Zha</h1>
+                <p class="subtitle">Computer Science & Statistics Student at UBC</p>
+                
+                <p class="about-me">
+                    A driven and analytical student pursuing a combined major in Computer Science and Statistics at the University of British Columbia. Passionate about leveraging data to solve real-world problems, with hands-on experience in machine learning, data analysis, and software development. Seeking opportunities to apply my skills in a dynamic and challenging environment.
+                </p>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/yutong-zha-129b29340/" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/Samecho" target="_blank">GitHub</a>
+                    <a href="mailto:zhayutong@gmail.com">Email</a>
+                </div>
+            </div>
+            </div>
     </header>
 
-    <section id="education">
-        <h2>Education</h2>
-        <ul>
-            <li><strong>The University of British Columbia, Vancouver, BC</strong> (2024 - Present)<br>
-                Bachelor of Science, Combined Major in Computer Science and Statistics<br>
-                Current GPA: 4.30/4.33</li>
-            <li><strong>Cégep Champlain College Saint-Lambert, QC</strong> (2023 - 2024)<br>
-                Diploma of College Studies, Pure and Applied Sciences</li>
-        </ul>
-    </section>
+    <main class="container">
+        <section id="education">
+            <h2>Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>The University of British Columbia</h3>
+                    <p><strong>Bachelor of Science, Combined Major in CS and Statistics</strong> | 2024 - Present</p>
+                    <p>Current GPA: 4.30/4.33</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Cégep Champlain College Saint-Lambert</h3>
+                    <p><strong>Diploma of College Studies, Pure and Applied Sciences</strong> | 2023 - 2024</p>
+                    <p>Honour Roll (2023 & 2024)</p>
+                </div>
+            </div>
+        </section>
 
-    <section id="experience">
-        <h2>Work Experience</h2>
-        <ul>
-            <li><strong>Fast Food Service Worker</strong> – Tim Hortons, Candiac, QC (Jul 2021 - Oct 2022)<br>
-                Provided efficient customer service and maintained food safety standards in a high-volume setting<br>
-                Prepared beverages and meals with attention to accuracy, cleanliness, and operational efficiency
-            </li>
-            <li><strong>Co-Founder & Secretary</strong> – Cooking Club, Cégep Champlain College Saint-Lambert, QC (Sep 2023 - May 2024)<br>
-                Co-founded a student cooking club and recruited 10+ active members<br>
-                Maintained club documentation and meeting records, ensuring clear communication across the executive team<br>
-                Organized workshops and events to foster student engagement and teamwork
-            </li>
-        </ul>
+        <section id="experience">
+            <h2>Work Experience</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>Co-Founder & Secretary – Cooking Club</h3>
+                    <p class="card-subtitle">Cégep Champlain College Saint-Lambert, QC | Sep 2023 - May 2024</p>
+                    <ul>
+                        <li>Co-founded a student cooking club and recruited 10+ active members.</li>
+                        <li>Maintained club documentation and meeting records, ensuring clear communication.</li>
+                        <li>Organized workshops and events to foster student engagement and teamwork.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Fast Food Service Worker</h3>
+                    <p class="card-subtitle">Tim Hortons, Candiac, QC | Jul 2021 - Oct 2022</p>
+                    <ul>
+                        <li>Provided efficient customer service and maintained food safety standards in a high-volume setting.</li>
+                        <li>Prepared beverages and meals with attention to accuracy, cleanliness, and operational efficiency.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-    </section>
+        <section id="projects">
+            <h2>Project Experience</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <h3>World Happiness Analysis & Prediction</h3>
+                    <div class="tech-tags">
+                        <span>R</span><span>SQL</span><span>tidymodels</span><span>ggplot2</span>
+                    </div>
+                    <p>Developed a data pipeline and predictive model to analyze factors influencing world happiness.</p>
+                    <ul>
+                        <li>Built a SQL pipeline to clean and structure the World Happiness Report dataset.</li>
+                        <li>Applied K-Means clustering to segment countries and determine optimal clusters.</li>
+                        <li>Tuned a KNN regression model using cross-validation to minimize RMSE.</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="#" target="_blank" class="button">View on GitHub</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Autonomous Snake Game using Q-learning</h3>
+                    <div class="tech-tags">
+                        <span>Python</span><span>Pygame</span><span>Reinforcement Learning</span>
+                    </div>
+                    <p>Created a Snake game where an AI agent learns to play optimally through Q-learning.</p>
+                    <ul>
+                        <li>Developed a Snake game with pygame, including custom collision and scoring mechanics.</li>
+                        <li>Designed and implemented a Q-learning algorithm to control the snake agent.</li>
+                        <li>Defined a reward structure to guide the agent's learning process.</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="#" target="_blank" class="button">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <section id="skills">
-        <h2>Technical Skills</h2>
-        <ul>
-            <li><strong>Languages & Libraries:</strong> Python (pandas, numpy), R (tidyverse, tidymodels), SQL, Java, C#, Racket</li>
-            <li><strong>Tools & Platforms:</strong> Git, GitHub, Jupyter, MySQL, VS Code, Linux, Microsoft Office Suite (Excel, Word)</li>
-            <li><strong>Data Science & ML:</strong> data wrangling, supervised learning (KNN, linear regression), clustering (K-means), cross-validation, hyperparameter tuning, bootstrapping, model evaluation</li>
-            <li><strong>Concepts:</strong> search algorithms, graph algorithms, reproducible workflows, version control</li>
-        </ul>
-    </section>
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div>
+                    <h4>Languages & Libraries</h4>
+                    <p>Python (pandas, numpy), R (tidyverse, tidymodels), SQL, Java, C#, Racket</p>
+                </div>
+                <div>
+                    <h4>Tools & Platforms</h4>
+                    <p>Git, GitHub, Jupyter, MySQL, VS Code, Linux, Microsoft Office Suite</p>
+                </div>
+                <div>
+                    <h4>Data Science & ML</h4>
+                    <p>Data Wrangling, Supervised Learning (KNN, Linear Regression), Clustering (K-means), Cross-Validation, Hyperparameter Tuning, Bootstrapping</p>
+                </div>
+                 <div>
+                    <h4>Concepts</h4>
+                    <p>Search Algorithms, Graph Algorithms, Reproducible Workflows, Version Control</p>
+                </div>
+            </div>
+        </section>
 
-    <section id="honors">
-        <h2>Honors & Awards</h2>
-        <ul>
-            <li>Honour Roll, Cégep Champlain College Saint-Lambert - 2023 & 2024</li>
-            <li>Top 2, Canada Lynx Math Competition (CLMC) - 2023</li>
-            <li>Top 3, Canadian Senior Mathematics Contest (CSMC) - 2023</li>
-            <li>Finalist, International Mathematical and Logic Games Championship - 2022</li>
-        </ul>
-    </section>
+         <section id="honors">
+            <h2>Honors & Awards</h2>
+             <ul>
+                 <li>Top 2, Canada Lynx Math Competition (CLMC) - 2023</li>
+                 <li>Top 3, Canadian Senior Mathematics Contest (CSMC) - 2023</li>
+                 <li>Finalist, International Mathematical and Logic Games Championship - 2022</li>
+             </ul>
+        </section>
 
-    <section id="projects">
-        <h2>Project Experience</h2>
-        <ul>
-            <li><strong>World Happiness Analysis & Prediction (R, SQL)</strong><br>
-                Built a SQL data pipeline to clean and structure the World Happiness Report dataset<br>
-                Applied K-Means clustering in R to segment countries and determine optimal clusters<br>
-                Developed and tuned a KNN regression model using cross-validation to minimize RMSE<br>
-                Visualized results to extract actionable insights
-            </li>
-            <li><strong>Autonomous Snake Game using Q-learning (Python)</strong><br>
-                Developed a Snake game with pygame, including custom collision and scoring mechanics<br>
-                Designed and implemented a Q-learning algorithm to control the snake agent<br>
-                Defined a reward structure based on actions such as food collection, collisions, and movement<br>
-                Integrated game environment and agent training logic for iterative learning
-            </li>
-        </ul>
-    </section>
+    </main>
 
-    <section id="languages">
-        <h2>Languages</h2>
-        <ul>
-            <li>English (fluent, university education)</li>
-            <li>French (fluent, secondary education)</li>
-            <li>Mandarin (native)</li>
-        </ul>
-    </section>
-
-    <footer>
-        <p>Contact: <a href="mailto:zhayutong@gmail.com">zhayutong@gmail.com</a></p>
-        <p>&copy; 2025 Yutong Zha</p>
+    <footer id="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p>I'm always open to discussing new opportunities and projects.</p>
+            <a href="mailto:zhayutong@gmail.com" class="button">Say Hello</a>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/yutong-zha-129b29340/" target="_blank">LinkedIn</a> | 
+                <a href="https://github.com/Samecho" target="_blank">GitHub</a>
+            </div>
+            <p class="copyright">&copy; 2025 Yutong Zha</p>
+        </div>
     </footer>
+
 </body>
 </html>
