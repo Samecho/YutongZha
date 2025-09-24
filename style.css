@@ -1,11 +1,12 @@
 /* --- Global Styles & Variables --- */
 :root {
-    --primary-color: #007bff; /* A nice blue */
+    --primary-color: #007bff;
     --primary-hover: #0056b3;
     --light-gray: #f8f9fa;
     --medium-gray: #e9ecef;
     --dark-gray: #343a40;
     --text-color: #212529;
+    --sidebar-width: 240px; /* Width of the sidebar */
     --border-radius: 8px;
     --box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
@@ -17,7 +18,6 @@ html {
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     margin: 0;
-    padding-top: 60px; /* Offset for the fixed navbar */
     line-height: 1.6;
     background-color: #fff;
     color: var(--text-color);
@@ -63,55 +63,83 @@ li {
     margin-bottom: 10px;
 }
 
-/* --- Navigation Bar --- */
-.navbar {
-    background-color: #ffffff;
-    border-bottom: 1px solid var(--medium-gray);
+/* --- NEW: Left Sidebar Navigation --- */
+.sidebar {
+    width: var(--sidebar-width);
+    height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: var(--box-shadow);
-}
-
-.navbar .container {
+    background-color: var(--light-gray);
+    border-right: 1px solid var(--medium-gray);
+    padding: 40px 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box; /* Important for padding */
 }
 
-.nav-brand {
+.sidebar .nav-brand {
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    color: var(--dark-gray);
+    margin-bottom: 40px;
+    padding-left: 15px;
+}
+.sidebar .nav-brand:hover {
     color: var(--dark-gray);
 }
 
-.nav-links {
-    display: flex;
+.sidebar .nav-links {
     list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
+    width: 100%;
 }
 
-.nav-links li {
-    margin: 0 15px;
+.sidebar .nav-links li {
+    margin: 0;
 }
 
-.nav-links a {
+.sidebar .nav-links .nav-link {
+    display: block;
+    padding: 12px 15px;
     color: var(--text-color);
     font-weight: 500;
+    border-radius: var(--border-radius);
+    transition: background-color 0.2s, color 0.2s;
+    margin-bottom: 5px; /* space between links */
 }
-.nav-links a:hover {
-    color: var(--primary-color);
+
+.sidebar .nav-links .nav-link:hover {
+    background-color: var(--medium-gray);
+    color: var(--dark-gray);
 }
+
+/* --- NEW: Active Link Highlight Style --- */
+.sidebar .nav-links .nav-link.active {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-weight: 700;
+}
+
+
+/* --- NEW: Main Content Area --- */
+.main-content {
+    margin-left: var(--sidebar-width); /* Pushes content to the right of the sidebar */
+    width: calc(100% - var(--sidebar-width));
+}
+
 
 /* --- Hero Section --- */
 .hero {
     background-color: var(--light-gray);
     padding: 80px 0;
     text-align: center;
+    min-height: 80vh; /* Make it taller */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero h1 {
@@ -136,14 +164,15 @@ li {
     font-size: 1rem;
 }
 
-/* --- Card Layout --- */
+
+/* --- Card Layout (No Changes) --- */
 .card-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) { /* Changed breakpoint for better layout */
     .card-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -175,7 +204,8 @@ li {
     margin-bottom: 15px;
 }
 
-/* --- Projects Section Specific --- */
+
+/* --- Projects Section Specific (No Changes) --- */
 .tech-tags {
     margin: 15px 0;
 }
@@ -192,10 +222,16 @@ li {
 }
 
 .project-links {
-    margin-top: 20px;
+    margin-top: auto; /* Pushes button to the bottom */
+    padding-top: 15px;
+}
+.card { /* Minor addition to make cards in a grid equal height */
+    display: flex;
+    flex-direction: column;
 }
 
-/* --- Skills Section --- */
+
+/* --- Skills Section (No Changes) --- */
 .skills-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -214,7 +250,8 @@ li {
     margin-top: 0;
 }
 
-/* --- Education Timeline --- */
+
+/* --- Education Timeline (No Changes) --- */
 .timeline-item {
     padding-left: 20px;
     border-left: 3px solid var(--primary-color);
@@ -242,7 +279,7 @@ li {
 }
 
 
-/* --- Buttons --- */
+/* --- Buttons (No Changes) --- */
 .button {
     display: inline-block;
     background-color: var(--primary-color);
@@ -257,6 +294,7 @@ li {
     background-color: var(--primary-hover);
     color: #fff;
 }
+
 
 /* --- Footer --- */
 footer {
@@ -283,4 +321,33 @@ footer a:hover {
     font-size: 0.9rem;
     margin-top: 20px;
     color: #adb5bd;
+}
+
+/* --- Responsive adjustments for smaller screens --- */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: static; /* No longer fixed on mobile */
+        border-right: none;
+        border-bottom: 1px solid var(--medium-gray);
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+
+    .sidebar .nav-brand {
+        margin-bottom: 0;
+    }
+
+    /* This part hides the text links and can be replaced with a hamburger menu in a more complex setup */
+    .sidebar .nav-links {
+        display: none; 
+    }
+    
+    .main-content {
+        margin-left: 0; /* No margin needed on mobile */
+        width: 100%;
+    }
 }
